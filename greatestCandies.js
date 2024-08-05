@@ -3,20 +3,9 @@ const kidsWithCandies = () => {
     const extraCandies = 3
 
     const boolArray = []
-    let maxValue = Number.MIN_VALUE
+    let maxValue = Math.max(...candies)
     for(let i = 0;i < candies.length;i++){
-        if(candies[i] >= maxValue){
-            maxValue = candies[i]
-        }
-    }
-
-    for(let i = 0;i < candies.length;i++){
-        if(candies[i] + extraCandies >= maxValue){
-            boolArray.push(true)
-        }
-        else{
-            boolArray.push(false)
-        }
+        boolArray.push(candies[i]+extraCandies >= maxValue)
     }
     console.log(boolArray)
 }
